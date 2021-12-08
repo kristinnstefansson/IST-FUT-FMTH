@@ -1,12 +1,80 @@
-> © Icelandic Standards (IST) 202. All Rights Reserved.
->
-> Without the written permission of the publisher, this workshop
-> agreement may not be reprinted or reproduced in any form by any means,
-> mechanical or electronic, such as by photocopying, sound recording or
-> other means, currently known or later invented, nor may the agreement
-> be disseminated through an electronic database.
->
-> 1\. edition
+---
+title: "ÍST WA 316:2022"
+author: ICS. 3.060
+date: "Gildistaka: 2022-02-15"
+subject: "Icelandic Online Banking Webservices "
+keywords: [IOBWS, ÍST, WA, 316]
+subtitle: ["Vinnustofusamþykkt - Tæknilegar upplýsingar", "Workshop Agreement - Technical Guidelines"]
+lang: "en"
+titlepage: true,
+# titlepage-rule-color: "360049"
+titlepage-rule-height: 0
+titlepage-background: "lib/istfrontpage.pdf"
+toc: true
+toc-title: Table of contents
+# toc-own-page: true
+book: true
+classoption: oneside
+numbersections: true
+first-chapter: 1
+listings-no-page-break: true
+highlight: "zenburn"
+include-before: |
+    Participants in TN-FMÞ Financial services (is. Fjármálaþjónusta)
+    During the development of ÍST TS 316 document.
+
+    | Name: | Company / organisation / association: |
+    | -----| ----- |
+    | Árni Geir Valgeirsson       |  Íslandsbanki            |         
+    | Ásgeir Helgi Jóhannsson     |  Afl lögmenn             |        
+    | Atli Guðmundsson            |  Rapyd/Kortaþjónustan    |                 
+    | Bergljót Kristinsdóttir     |  ICEPRO                  |   
+    | Bjarni Þór Pálsson          |  RB                      |
+    | Björgólfur G Guðbjörnsson   |  Origo                   |  
+    | Gísli Konráð Björnsson      |  Landsbankinn            |         
+    | Guðjón Karl Arnarson        |  RB                      |
+    | Guðmundur Jón Halldórsson   |  CTL                     |
+    | Halldór Vagn Hreinsson      |  Landsbankinn            |         
+    | Halldór Péturson            |  Fjármálaeftirlitið      |               
+    | Hermann Snorrason           |  Landsbankinn            |         
+    | Hjálmar Brynjólfsson        |  Seðlabanki Íslands      |               
+    | Hrannar Már Hallkelsson     |  Arion banki             |        
+    | Ingveldur Lárusdóttir       |  Landsbankinn            |         
+    | Ingibergur Sindri Stefnisson|  Unimaze                 |    
+    | Jóhannes Þór Ágústarson     |  Íslandsbanki            |         
+    | Kristinn Stefánsson         |  Arion banki             |        
+    | Markús Guðmundsson          |  Unimaze                 |    
+    | Ólafur Tryggvason           |  Advania                 |    
+    | Sigrún Gunnarsdóttir        |  WISE                    | 
+    | Sigurður Gauti Hauksson     |  Alskil                  |   
+    | Sigurður Másson             |  Advania                 |    
+    | Styrmir Kristjánsson        |  Sjálfstæður             |        
+    | Sveinn G. Gunnarsson        |  Landsbankinn            |         
+    | Védís Ingólfsdóttir         |  Arion banki             |        
+    | Védís Sigurðardóttir        |  Landsbankinn            |         
+    | Sigurvin Sigurjónsson       |  KPMG                    | 
+
+    
+    \
+    \
+    \
+
+    © Icelandic Standards (IST) 2022. All Rights Reserved.
+
+    Without the written permission of the publisher, this workshop
+    agreement may not be reprinted or reproduced in any form by any means,
+    mechanical or electronic, such as by photocopying, sound recording or
+    other means, currently known or later invented, nor may the agreement
+    be disseminated through an electronic database.
+
+    1\. edition
+
+# thanks: thanks
+# top-level-division: chapter
+# header-includes:
+# - \renewcommand{\chaptername}{}
+# - \renewcommand{\thechapter}{}
+...
 
 \newpage
 
@@ -18,7 +86,7 @@
 
 \newpage
 
-# Foreword
+# Foreword {.unnumbered}
 
 This IST workshop agreement was developed in accordance with "ÍST Reglur
 um tækniforskriftir, tækniskýrslur og vinnu­stofu­samþykktir" (*e.* IST
@@ -58,7 +126,7 @@ under the working group TN-FMÞ-VH7, and approved by:
 -   RB (Guðjón Karl Arnarsson, Halla Sigrún Árnadóttir)
 
 ÍST WA-316 is not subject to any patent rights. As part of the IOBWS v3.0 
-Technical Specifications, the document is distributed under a 
+Technical Specifications, the technical contracts are distributed under a 
 Creative Commons Attri­bution 4.0 International Public Licens.
 
 The Workshop participants have made every effort to ensure the
@@ -69,36 +137,6 @@ neither the workshop participants, nor IST can be held liable for
 damages or losses of any kind whatsoever which may arise from its
 application. Users of ÍST WA-316 do so on their own responsibility and
 at their own risk.
-
-\newpage
-# Table of Contents
-
-- [Foreword](#foreword)
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
-- [Scope](#scope)
-- [Normative references, definitions, and symbols](#normative-references-definitions-and-symbols)
-  - [Definitions](#definitions)
-  - [Authentication Use Cases and Requirements](#authentication-use-cases-and-requirements)
-  - [Main Use Cases](#main-use-cases)
-      - [Centralized Financial System](#centralized-financial-system)
-      - [On-premise System](#on-premise-system)
-      - [On-premise employee](#on-premise-employee)
-      - [Financial Services](#financial-services)
-      - [Financial Software as a Service](#financial-software-as-a-service)
-      - [Software Vendor](#software-vendor)
-      - [User of open endpoints](#user-of-open-endpoints)
-      - [Enterprise with the Claim Collection Agency role logs in for the first time](#enterprise-with-the-claim-collection-agency-role-logs-in-for-the-first-time)
-      - [Claim Collection Agency](#claim-collection-agency)
-  - [Scopes](#scopes)
-    - [Payment endpoints](#payment-endpoints)
-    - [Accounts endpoints](#accounts-endpoints)
-    - [Card endpoints](#card-endpoints)
-    - [Currency endpoints](#currency-endpoints)
-    - [Documents endpoints](#documents-endpoints)
-    - [Currency endpoints](#currency-endpoints-1)
-    - [Claim template endpoints](#claim-template-endpoints)
-    - [Claim endpoints](#claim-endpoints)
 
 \newpage
 
@@ -127,6 +165,7 @@ partial results of the fifth phase of the third IOBWS project, IOBWS
 This document is based on the results from the working group of the
 TN-FMÞ-VH7. 
 
+\newpage
 # Scope 
 
 The technical specifications for individual aspects of the Icelandic Online Banking Web Services 3.0,
@@ -157,11 +196,16 @@ It is the intention that the guidelines will be an evolving document, with new v
 - **TN-FMÞ** - Technical committee on finance services, working under FUT. 
 
 
-## Authentication Use Cases and Requirements
+# Authentication Use Cases and Requirements
 
-The API specifications for IOBWS reference OAuth2 based authorization, with the NextGenPSD2 ancestry of parts of the specification, occasionally showing through as references to consents. It is the intention here to further elaborate on the ways the most common use cases should be handled as the common dominator among implementors and consumers of the APIs.  
+The API specifications for IOBWS reference OAuth2 based authorization, and reflects the NextGenPSD2 ancestry with occasional references to Strong Customer Authentication and consents.
 
-It is established here that the usage of "Búnaðarskilríki" issued under Fullgilt Auðkenni as the current gold standard for authentication will continue to be supported. They will however not require, as in the previous IOBWS specifications, the usage of username and passwords.  
+~~~ { .yml include='Deliverables/IOBWS3.0.yaml' startFrom=17 endAt=24 .numberLines caption='IOBWS 3.0 full flows' }
+~~~
+
+These guidelines further elaborate on the ways the most common use cases should be handled among all implementors and consumers of the APIs that adhere to the workshop agreement.  
+
+It is established that the usage of "Búnaðarskilríki" issued under Fullgilt Auðkenni as the current gold standard for authentication and they will continue to be supported as such. The usage of username and passwords in combination with X.509 certificates, as in the previous IOBWS specifications, is not longer supported.   
 
 Additionally, OpenID Code Flow with PKCE will be part of the common support to handle the various scenarios.
 
@@ -169,7 +213,7 @@ Additionally, OpenID Code Flow with PKCE will be part of the common support to h
 
 To harmonize technical expectations, some basic use cases are considered and the acceptance criteria should guide implementors towards selecting the correct solution.
 
-#### Centralized Financial System
+### Centralized Financial System
 
 > As a **Financial System**, I want to connect to IOBWS 3.0 services so that I can e.g. manage Claims, initiate Payments, and fetch Account transactions in batches or directly on behalf of users.  
 
@@ -179,7 +223,7 @@ Acceptance criteria:
 1. Support for OIDC and, code flow with PKCE as the common denominator.
 1. Support for online scenarios, where the organization authenticates the interactive employee that instigates the action.
 
-#### On-premise System
+### On-premise System
 
 > As **a user of an on-premise Financial System**, I want to be able to authorize the system to connect to IOBWS 3.0 services and manage Claims, initiate Payments and fetch Account transactions on my behalf in non-interactive sessions.
 
@@ -187,7 +231,7 @@ Acceptance criteria:
 
 1. Support for OIDC and OAuth 2.0, code flow with offline_access, using MTLS to identify the client/server using Búnaðarskilríki issued under Fullgilt Auðkenni. 
 
-#### On-premise employee
+### On-premise employee
 
 > As a **company employee** I want to e.g. initiate payment instructions, create claims and interact with IOBWS 3.0 so that I can manage my day-to-day activities through e.g. the company ERP system.
 
@@ -196,7 +240,7 @@ Acceptance criteria:
 1. Support for OIDC and OAuth 2.0, code flow with PKCE as the common denominator.
 1. Support for user authentication with Qualified Certificates. 
 
-#### Financial Services
+### Financial Services
 
 > As e.g. **an independent Accounting firm** offering services to multiple clients, I want to be able to access their accounts and products through IOBWS 3.0, so I can manage their financials and accounting.
 
@@ -207,7 +251,7 @@ Acceptance criteria:
 1. Support for user authentication with Qualified Certificates. 
 1. The scopes should be known, based on the endpoints defined in IOBWS 3.0. 
 
-#### Financial Software as a Service
+### Financial Software as a Service
 
 > As the IOBWS 3.0 **customer of a bank**, I want to be able to authorize SaaS software hosted in public clouds to act on my behalf, so I can allow the service to manage my financials and the products I have access to such as Claims.
 
@@ -217,7 +261,7 @@ Acceptance criteria:
 1. Support for OIDC and OAuth 2.0, code flow with PKCE as the common denominator.
 1. Support for user authentication with Qualified Certificates. 
 
-#### Software Vendor
+### Software Vendor
 
 > As a **Software Vendor** providing Custom, COTS, or SaaS applications that my clients use to accesses IOBWS 3.0, I want to be able to target common authentication behavior as part of the technical standard offered by all the banks, so that I do not have to implement and test against multiple subtly different endpoints.
 
@@ -227,12 +271,12 @@ Acceptance criteria:
 1. The possible variations between banks do not affect the protocol exchanges between the client, authorization server, and API endpoint. 
 1. Possible variations in methods that still are offered by more than one bank are made part of the standard, as long as a common fallback exists.
 
-#### User of open endpoints
+### User of open endpoints
 
 > As a **Consumer of open services** such as currency data, I want my system to be able to interact with the endpoints without authentication but identify my client as to 
 Acceptance criteria:
 
-#### Enterprise with the Claim Collection Agency role logs in for the first time
+### Enterprise with the Claim Collection Agency role logs in for the first time
 
 > As a **Claim Collection Agency**, I want my system to be able to login into the system and separate my authentication as a secondary collection agency vs. my use as a primary claims collector. 
 
@@ -241,7 +285,7 @@ Acceptance criteria:
 1. When I log in as a secondary collection role, I identify using a client ID that is related to that role. 
 2. When I log in as the parent enterprise to create claims as a primary claims collector, I identify using a client ID that is related to that role. 
 
-#### Claim Collection Agency
+### Claim Collection Agency
 
 > As a **Claim Collection Agency**, I want my system to be able to interact with the endpoints to manipulate claims whose status is in the secondary collection and transferred to a claim template in my ownership. 
 
